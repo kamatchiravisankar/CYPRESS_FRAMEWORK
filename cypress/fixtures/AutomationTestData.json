@@ -1,0 +1,8 @@
+[
+  {
+    "To_be_Tested": "Yes",
+    "Scenario": "Login-Valid Credentials",
+    "Email": "tester01@g.com",
+    "Password": "Kuttu@123"
+  }
+]

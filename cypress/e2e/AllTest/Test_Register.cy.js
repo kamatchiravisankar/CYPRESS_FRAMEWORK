@@ -11,7 +11,7 @@ describe("Register User", () => {
   const signupLoginObj = new PO_signupLoginPage();
 
   it("Registerand Delete the User in Automation Excercise site", () => {
-    cy.visit("https://automationexercise.com/");
+    cy.visit("");
     cy.title().should("eq", "Automation Exercise");
     homepageObj.getSignUpBtn().click();
 
