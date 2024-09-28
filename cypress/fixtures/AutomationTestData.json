@@ -1,8 +1,34 @@
 [
   {
-    "To_be_Tested": "Yes",
+    "To_be_Tested": "No",
     "Scenario": "Login-Valid Credentials",
     "Email": "tester01@g.com",
-    "Password": "Kuttu@123"
+    "Password": "Kuttu@123",
+    "loginflag": "valid"
+  },
+  {
+    "To_be_Tested": "No",
+    "Scenario": "Login-InValid Credentials",
+    "Email": "tester0111212@g.com",
+    "Password": "Kuttu@123",
+    "loginflag": "invalid"
+  },
+  {
+    "To_be_Tested": "Yes",
+    "Scenario": "Already Registered User",
+    "Email": "tester01@g.com",
+    "Password": "Kuttu@123",
+    "loginflag": "register",
+    "Sign_upName": "Tester"
+  },
+  {
+    "To_be_Tested": "Yes",
+    "Scenario": "Already Registered User",
+    "Email": "tester01@g.com",
+    "Password": "Kuttu@123",
+    "loginflag": "register",
+    "Sign_upName": "Tester",
+    "subject": "Testing",
+    "Message": "contactus testing message"
   }
 ]

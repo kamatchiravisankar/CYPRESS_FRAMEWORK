@@ -1,3 +1,6 @@
-export function ExceltoJSONConverter(xlsxpath) {
-  cy.task("convertXlsxToJson", xlsxpath);
-}
+describe('"ExceltoJson', () => {
+  const xlsxpath = "./cypress/fixtures/AutomationTestData.xlsx";
+  it("TEST", () => {
+    cy.task("convertXlsxToJson", xlsxpath);
+  });
+});

@@ -3,6 +3,8 @@ const xlsx = require("xlsx");
 const path = require("path");
 const { writeFileSync } = require("fs");
 const { stringify } = require("querystring");
+const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
+const { isFileExist, findFiles } = require('cy-verify-downloads');
 module.exports = {
   reporter: "cypress-mochawesome-reporter",
   video: true,
@@ -25,6 +27,8 @@ module.exports = {
           return null;
         },
       });
+    
+      on('task', { isFileExist, findFiles });
     },
   },
 };

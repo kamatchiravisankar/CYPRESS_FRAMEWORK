@@ -1,4 +1,8 @@
 export class PO_signupLoginPage {
+  getSignupPagelink() {
+    return cy.get('a[href="/login"]');
+  }
+
   getSignUpText() {
     return cy.get(".signup-form>h2:visible");
   }
@@ -102,5 +106,15 @@ export class PO_signupLoginPage {
 
   getAccDeletedText() {
     return cy.get('[data-qa="account-deleted"]>b');
+  }
+  getLogout() {
+    return cy.get('a[href="/logout"]');
+  }
+
+  getinvalidloginErrormsg() {
+    return cy.get("#form > div > div > div.col-sm-4> div > form > p");
+  }
+  getalreadyregisteredmsg() {
+    return cy.get('[action="/signup"]>p');
   }
 }

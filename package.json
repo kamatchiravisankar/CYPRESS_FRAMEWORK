@@ -1,15 +1,20 @@
 {
   "dependencies": {
     "convert-excel-to-json": "^1.7.0",
+    "cypress-parallel": "^0.14.0",
     "exceljs": "^4.4.0",
     "init": "^0.1.2"
   },
   "scripts": {
     "test": "npx cypress run cypress/e2e/AllTest/*.js ",
-    "e2e:chrome": " npx cypress run --browser chrome --spec cypress/e2e/AllTest/*.js"
+    "e2e:chrome": " npx cypress run --browser chrome --spec cypress/e2e/AllTest/*.js",
+    "cy:run": "cypress run",
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/e2e/AllTest/*.js"
   },
   "devDependencies": {
+    "cy-verify-downloads": "^0.2.5",
     "cypress": "^13.14.2",
+    "cypress-downloadfile": "^1.2.4",
     "cypress-mochawesome-reporter": "^3.8.2",
     "xlsx": "^0.18.5"
   }
