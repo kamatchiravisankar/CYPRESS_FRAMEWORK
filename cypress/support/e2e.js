@@ -21,3 +21,4 @@ import "fs";
 // require('./commands')
 import "xlsx";
 import "exceljs";
+import "cypress-v10-preserve-cookie";

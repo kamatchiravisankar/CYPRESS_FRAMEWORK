@@ -1,9 +1,13 @@
 ///<reference types='Cypress'/>
-const path = require("path");
-
 import { PO_HomePage } from "../PO/PO_HomePage";
 
+const path = require("path");
+
 describe("ContactUS scenarios", function () {
+  beforeEach(() => {
+    // equivalent to cy.preserveCookieOnce('connect.session')
+    cy.preserveCookieOnce("connect.session");
+  });
   const testdata = require("../../fixtures/AutomationTestData.json");
   const homepageObj = new PO_HomePage();
   const filepath =

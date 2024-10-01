@@ -4,11 +4,12 @@ const path = require("path");
 const { writeFileSync } = require("fs");
 const { stringify } = require("querystring");
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
-const { isFileExist, findFiles } = require('cy-verify-downloads');
+const { isFileExist, findFiles } = require("cy-verify-downloads");
 module.exports = {
   reporter: "cypress-mochawesome-reporter",
   video: true,
   projectId: "w426yj",
+  experimentalSessionSupport: true,
   e2e: {
     baseUrl: "https://automationexercise.com/",
 
@@ -27,8 +28,8 @@ module.exports = {
           return null;
         },
       });
-    
-      on('task', { isFileExist, findFiles });
+
+      on("task", { isFileExist, findFiles });
     },
   },
 };

@@ -1,15 +1,21 @@
-import { PO_HomePage } from "../PO/PO_HomePage";
+import { PO_HomePage } from '../PO/PO_HomePage';
 
 describe("Navigation to next page", function () {
+  beforeEach(() => {
+    // equivalent to cy.preserveCookieOnce('connect.session')
+    cy.preserveCookieOnce("connect.session");
+  });
   const homepageObj = new PO_HomePage();
-  it.skip("Switch to Testcases lisiting screen from homepage", function () {
+
+  
+  it("Switch to Testcases lisiting screen from homepage", function () {
     cy.visit("");
     homepageObj.getTestCasebtn().click();
     cy.url().should("include", "/test_cases");
   });
 
   it("Subscription flow", function () {
-    cy.visit("");
+    // cy.visit("");
     homepageObj.getSubscription().scrollIntoView();
     homepageObj.getSubscriptionemailbox().type("test11@g.com");
     homepageObj.getSubscribeicon().click();

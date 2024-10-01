@@ -1,10 +1,12 @@
-import { PO_HomePage } from "../PO/PO_HomePage";
-import { PO_ProductPage } from "../PO/PO_ProductPage";
-import { login_actions } from "../utils/methods_login";
+import { PO_HomePage } from '../PO/PO_HomePage';
+import { PO_ProductPage } from '../PO/PO_ProductPage';
+import { login_actions } from '../utils/methods_login';
 
 describe("Product flow", () => {
   const homepageObj = new PO_HomePage();
   const prodpageObj = new PO_ProductPage();
+
+ 
 
   it("Product detail screen dynamic", function () {
     cy.visit("");
@@ -50,7 +52,7 @@ describe("Product flow", () => {
   });
 
   it("Search Product", function () {
-    cy.visit("");
+    //cy.visit("");
     homepageObj.getProduct().click();
     prodpageObj.getProductSearchbox().type("Winter top");
     prodpageObj.getSearchicon().click();
@@ -60,7 +62,7 @@ describe("Product flow", () => {
       .should("contain", "Winter Top");
   });
   it("Add to cart", function () {
-    cy.visit("");
+    //cy.visit("");
     homepageObj.getProduct().click();
     let products = ["Sleeveless Dress", "Blue Top"];
 
