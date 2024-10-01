@@ -14,6 +14,7 @@ jobs:
           browser: firefox
 
       - name: cypress-Test Reprots
+          if:always()
         uses: actions/upload-artifact@v4
         with:
           path: cypress\reports\html
