@@ -8,6 +8,7 @@
   "scripts": {
     "test": "npx cypress run cypress/e2e/AllTest/*.js ",
     "e2e:chrome": " npx cypress run --browser chrome --spec cypress/e2e/AllTest/*.js",
+    "test:navigation": " npx cypress run  --spec cypress/e2e/AllTest/Navigation.cy.js",
     "cy:run": "cypress run",
     "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/e2e/AllTest/*.js"
   },

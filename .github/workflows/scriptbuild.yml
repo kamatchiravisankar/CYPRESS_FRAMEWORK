@@ -1,4 +1,4 @@
-name: Regression-script
+name: Regression
 on: push
 jobs:
   cypress-run:
@@ -12,3 +12,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npm run e2e:chrome
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:navigation
