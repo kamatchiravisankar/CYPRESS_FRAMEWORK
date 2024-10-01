@@ -1,30 +1,26 @@
-name: Parallel Cypress Tests
+name: Regression
 on: push
 jobs:
-  test:
-    name: Cypress run
+  Chrome-flow:
     runs-on: ubuntu-22.04
-    strategy:
-      # when one test fails, DO NOT cancel the other
-      # containers, because this will kill Cypress processes
-      # leaving Cypress Cloud hanging ...
-      # https://github.com/cypress-io/github-action/issues/48
-      fail-fast: false
-      matrix:
-        # run 3 copies of the current job in parallel
-        containers: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run e2e:chrome
 
-      # because of "record" and "parallel" parameters
-      # these containers will load balance all found tests among themselves
-      - name: Cypress run-job1
+  navigation-flow:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          command: npm run e2e:chrome
-    
-      - name: Cypress run-job2
-        uses: cypress-io/github-action@v6
-        with:
-          command: npm run e2e:chrome
+          command: npm run test:navigation
