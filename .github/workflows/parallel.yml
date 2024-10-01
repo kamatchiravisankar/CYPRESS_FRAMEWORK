@@ -1,4 +1,4 @@
-name: Regression
+name: Parallel
 on: push
 jobs:
   Chrome-flow:

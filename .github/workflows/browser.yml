@@ -12,3 +12,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: firefox
+
+      - name: cypress-Test Reprots
+        uses: actions/upload-artifact@v4
+        with:
+          path: cypress\reports\html
